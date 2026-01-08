@@ -29,4 +29,27 @@ Tracking applications manually results in an error-prone and unstructured applic
 ## Status
 
     1. Project setup and design phase
+
+## Data Model
+
+### Application
+     - id (int, primary key)
+     - company_name(string, required)
+     - role_title(string, required)
+     - status (string: Applied, Interview, Rejected, Offer)
+     - date_applied (date, optional)
+     - notes (text, optional)
+     
+### Application Creation Flow
+    1. User Submits Application Details.
+    2. Backend validates required fields.
+    3. Status is checked against allowed values.
+    4. Application is saved to the database.
+    5. Backend returns a successful response.
+
+## Validation Rules
+    - company_name must not be empty.
+    - role_title must not be empty.
+    - status must be one of: Applied, Interview, Rejected, Offer
+
       
