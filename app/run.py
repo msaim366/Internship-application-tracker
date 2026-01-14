@@ -1,9 +1,8 @@
 from flask import Flask
-app = Flask(__name__)
+from routes import register_routes
 
-@app.route("/")
-def home():
-    return "Hello, Flask!"
+app = Flask(__name__)
+register_routes(app)
 
 if __name__ == "__main__":
     app.run(debug=True)
