@@ -17,6 +17,14 @@ def register_routes(app):
         applications.append(data)
         return jsonify({"message": "Application added"})
 
+
+    @app.route("/applications/<int:index>", methods=["GET"])
+    def get_application(index):
+        if index < 0 or index >= len(applications):
+            return jsonify({"Error": "Application not found"}), 404
+       
+        return jsonify(applications[index])
+
     
 
     
