@@ -52,4 +52,28 @@ Tracking applications manually results in an error-prone and unstructured applic
     - role_title must not be empty.
     - status must be one of: Applied, Interview, Rejected, Offer
 
+## Current Features
+
+This  project is a simple Flask-based backend for tracking internship applications
+
+### Supported API Endpoints
+
+#### 'GET /applications'
+
+  -  Returns all Internship Applictaions
+
+#### 'POST /applications'
+  -  Adds a new Internship application
+  -  Requires 'company_name', 'role_title', and 'status'
+
+#### 'GET /applications/<index>'
+  - Returns a single application by index
+  - Returns 404 if the application does not exist
+
+#### 'DELETE /applications/<index>'
+  - Deletes an application by index
+  - Returns 404 if the application does not exist
+
+
+
       
