@@ -32,6 +32,21 @@ def register_routes(app):
         
         applications.pop(index)
         return jsonify({"message": "Application deleted"})
+    
+    @app.route("/applications/<int:index>", methods = ["PUT"])
+    def update_applications(index):
+        if index < 0 or index >= len(applications):
+            return jsonify({"Error": "Application not found"}), 404
+        data1 = request.get_json()
+        if ("company_name" not in data1 or "role_title" not in data1 or "status" not in data1):
+            return jsonify({"Error":"Missing required fields"}), 400
+        applications[index] = data1
+        return jsonify({"message": "Application updated"})
+        
+        
+
+        
+
 
 
 
