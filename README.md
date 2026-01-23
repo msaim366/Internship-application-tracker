@@ -94,6 +94,11 @@ This  project is a simple Flask-based backend for tracking internship applicatio
 
        http://127.0.0.1:5001
 
+## Future Improvements
+
+      1. Persist appliaction data using a database instead of in-memory storage
+      2. Add User Authentication so multiple users can manage their own applications
+
    
 
 
