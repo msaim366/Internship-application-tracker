@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Applications</title>
+</head>
+<body>
+    <!-- Visible content goes here -->
+    <h1> Internship Applications </h1>
+    <button id = "loadButton" type = "button"> Get Applications </button>
+    <div id = "output"> 
+        
+    
+    
+    </div>
+    <script>
+        const loadButton = document.getElementById("loadButton")
+        const output = document.getElementById("output")
+        loadButton.addEventListener("click", function()
+        {
+            fetch("http://127.0.0.1:5001/applications")
+            .then((response) => response.json())
+            .then(data => {
+               output.innerHTML = JSON.stringify(data); 
+                
+            })
+        });
+    </script>
+</body>
+</html>
