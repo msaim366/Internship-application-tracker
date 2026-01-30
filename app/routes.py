@@ -22,7 +22,6 @@ def register_routes(app):
     def get_application(index):
         if index < 0 or index >= len(applications):
             return jsonify({"Error": "Application not found"}), 404
-       
         return jsonify(applications[index])
     
     @app.route("/applications/<int:index>",methods = ["DELETE"])

@@ -22,8 +22,11 @@
             fetch("http://127.0.0.1:5001/applications")
             .then((response) => response.json())
             .then(data => {
-               output.innerHTML = JSON.stringify(data); 
-                
+                output.innerHTML = ""
+                for(const d of data){
+                    output.innerHTML += "Company name: " + d.company_name  + "<br>" + "Role: " + d.role_title + "<br>" + "Status: " + d.status + "<br><hr>"
+
+                }
             })
         });
     </script>
